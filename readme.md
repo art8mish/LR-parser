@@ -50,8 +50,8 @@ F &\Rightarrow \text{id}
 $$ C = \text{CLOSURE}({[E' \Rightarrow \cdot E]}) $$
 
 ```math
+CLOSURE({[$E' \Rightarrow \cdot E$]}):
 \begin{flalign*}
-\text{CLOSURE}({[E' \Rightarrow \cdot E]})\text{:} \\
 E' \Rightarrow \cdot E \\
 E \Rightarrow \cdot E + T \\
 E \Rightarrow \cdot E - T \\
