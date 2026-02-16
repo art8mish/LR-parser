@@ -113,9 +113,10 @@ $$ F \Rightarrow \text{id} \cdot $$
 
 #### $I_6 = \text{GOTO}(I_1, +)$:
 
-$$ E \Rightarrow E + \cdot T $$
-
-    $\text{CLOSURE}({[E \Rightarrow E + \cdot T]})$:
+$$ 
+E \Rightarrow E + \cdot T \\
+\text{CLOSURE}({[E \Rightarrow E + \cdot T]}):
+$$
 ```math
 \begin{flalign*}
 T &\Rightarrow \cdot T * F \\
