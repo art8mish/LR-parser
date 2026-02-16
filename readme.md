@@ -11,10 +11,12 @@
 
 ## Грамматика $G'$
 
-$$E' \Rightarrow E $$
-$$E \Rightarrow E + T \| E - T \| T $$
-$$T \Rightarrow T * F \| T / F \| F $$
-$$F \Rightarrow (E) \| \text{id} $$
+Расширенная грамматика $G'$ используется для того, чтобы обозначить точку останова для автомата.
+
+$E' \Rightarrow E \\$
+$E \Rightarrow E + T \| E - T \| T \\$
+$T \Rightarrow T * F \| T / F \| F \\$
+$F \Rightarrow (E) \| \text{id} \\$
 
 или
 
@@ -29,7 +31,7 @@ $F \Rightarrow (E) \\ $
 $F \Rightarrow \text{id} \\ $
 
 
-Расширенная грамматика $G'$ используется для того, чтобы обозначить точку останова для автомата.
+
 
 <details>
 <summary> ###Построение LR-парсера </summary>
