@@ -129,14 +129,14 @@ F &\Rightarrow \cdot \text{id}
 
 $$ E \Rightarrow E - \cdot T $$
 
-$\text{CLOSURE}({[E \Rightarrow E - \cdot T]})$: 
-Аналогично $I_6$
+$$\text{CLOSURE}({[E \Rightarrow E - \cdot T]}): \text{Аналогично} I_6$$
+
 
 #### $I_8 = \text{GOTO}(I_2, *)$:
 
 $$ T \Rightarrow T * \cdot  F $$
 
-$\text{CLOSURE}({[T \Rightarrow T * \cdot  F]})$:
+$$\text{CLOSURE}({[T \Rightarrow T * \cdot  F]}):$$
 ```math
 \begin{flalign*} 
 F &\Rightarrow \cdot (E) \\
@@ -148,7 +148,7 @@ F &\Rightarrow \cdot \text{id}
 
 $$ T \Rightarrow T / \cdot  F $$
 
-$\text{CLOSURE}({[T \Rightarrow T / \cdot  F]})$:
+$$\text{CLOSURE}({[T \Rightarrow T / \cdot  F]}):$$
 ```math
 \begin{flalign*}
 F &\Rightarrow \cdot (E) \\
