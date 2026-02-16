@@ -37,8 +37,8 @@ F &\Rightarrow \text{id}
 
 Расширенная грамматика $G'$ используется для того, чтобы обозначить точку останова для автомата.
 
-<details>
-<summary> Построение LR-парсера </summary>
+<!-- <details>
+<summary> Построение LR-парсера </summary> -->
 
 ## Канонический набор пунктов
 
@@ -270,8 +270,8 @@ $\text{FOLLOW}(F) &= \text{FOLLOW}(T) = \{\$, ")", +, -, *, / \}
 \end{flalign*}
 ```
 
-
-</details>
+<!-- 
+</details> -->
 
 
 <!-- $ID1      * ID2$                  SHIFT     
