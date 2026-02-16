@@ -11,12 +11,12 @@
 
 ## Грамматика $G'$
 ```math
-\begin{align*}
+\begin{flalign*}
 & E' &\Rightarrow E \
 & E &\Rightarrow E + T \| E - T \| T \\
 & T &\Rightarrow T * F \| T / F \| F \\
 & F &\Rightarrow (E) \| \text{id} 
-\end{align*}
+\end{flalign*}
 ```
 
 или
