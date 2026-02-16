@@ -52,15 +52,15 @@ $$ C = \text{CLOSURE}({[E' \Rightarrow \cdot E]}) $$
 $\text{CLOSURE}({[E' \Rightarrow \cdot E]})$:
 ```math
 \begin{flalign*}
-E' \Rightarrow \cdot E \\
-E \Rightarrow \cdot E + T \\
-E \Rightarrow \cdot E - T \\
-E \Rightarrow \cdot T \\
-T \Rightarrow \cdot T * F \\
-T \Rightarrow \cdot T / F \\
-T \Rightarrow \cdot F \\
-F \Rightarrow \cdot (E) \\
-F \Rightarrow \cdot \text{id}
+E' &\Rightarrow \cdot E \\
+E &\Rightarrow \cdot E + T \\
+E &\Rightarrow \cdot E - T \\
+E &\Rightarrow \cdot T \\
+T &\Rightarrow \cdot T * F \\
+T &\Rightarrow \cdot T / F \\
+T &\Rightarrow \cdot F \\
+F &\Rightarrow \cdot (E) \\
+F &\Rightarrow \cdot \text{id}
 \end{flalign*}
 ```
 
