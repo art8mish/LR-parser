@@ -11,12 +11,14 @@
 
 ## Грамматика $G'$
 ```math
+\begin{flushleft}
 \begin{aligned}
-&E' \Rightarrow E \
-&E \Rightarrow E + T \| E - T \| T \\
-&T \Rightarrow T * F \| T / F \| F \\
-&F \Rightarrow (E) \| \text{id} 
+E' &\Rightarrow E \
+E &\Rightarrow E + T \| E - T \| T \\
+T &\Rightarrow T * F \| T / F \| F \\
+F &\Rightarrow (E) \| \text{id} 
 \end{aligned}
+\end{flushleft}
 ```
 
 или
