@@ -11,28 +11,28 @@
 
 ## Грамматика $G'$
 
-$ E' \Rightarrow E \\ $
-$ E \Rightarrow E + T \| E - T \| T \\ $
-$ T \Rightarrow T * F \| T / F \| F \\ $
-$ F \Rightarrow (E) \| \text{id} \\ $
+$$E' \Rightarrow E $$
+$$E \Rightarrow E + T \| E - T \| T $$
+$$T \Rightarrow T * F \| T / F \| F $$
+$$F \Rightarrow (E) \| \text{id} $$
 
 или
 
-$ E' \Rightarrow E \\ $
-$ E \Rightarrow E + T \\ $
-$ E \Rightarrow E - T\\ $
-$ E \Rightarrow T \\ $
-$ T \Rightarrow T * F \\ $
-$ T \Rightarrow T / F \\ $
-$ T \Rightarrow F \\ $
-$ F \Rightarrow (E) \\ $
-$ F \Rightarrow \text{id} \\ $
+$E' \Rightarrow E$
+$E \Rightarrow E + T \\ $
+$E \Rightarrow E - T\\ $
+$E \Rightarrow T \\ $
+$T \Rightarrow T * F \\ $
+$T \Rightarrow T / F \\ $
+$T \Rightarrow F \\ $
+$F \Rightarrow (E) \\ $
+$F \Rightarrow \text{id} \\ $
 
 
 Расширенная грамматика $G'$ используется для того, чтобы обозначить точку останова для автомата.
 
 <details>
-<summary> Построение LR-парсера </summary>
+<summary> ###Построение LR-парсера </summary>
 
 ## Канонический набор пунктов
 
