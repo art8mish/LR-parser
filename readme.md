@@ -50,8 +50,7 @@ F &\Rightarrow \text{id}
 $$ C = \text{CLOSURE}({[E' \Rightarrow \cdot E]}) $$
 
 ```math
-CLOSURE({[$E' \Rightarrow \cdot E$]}):
-\begin{flalign*}
+\text{CLOSURE}({[E' \Rightarrow \cdot E]}):
 E' \Rightarrow \cdot E \\
 E \Rightarrow \cdot E + T \\
 E \Rightarrow \cdot E - T \\
@@ -61,7 +60,6 @@ T \Rightarrow \cdot T / F \\
 T \Rightarrow \cdot F \\
 F \Rightarrow \cdot (E) \\
 F \Rightarrow \cdot \text{id}
-\end{flalign*}
 ```
 
 ### Построение GOTO
