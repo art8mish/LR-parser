@@ -51,7 +51,7 @@ $$ C = \text{CLOSURE}({[E' \Rightarrow \cdot E]}) $$
 
 ```math
 \begin{flalign*}
-\text{CLOSURE}({[E' \Rightarrow \cdot E]}): \\
+&\text{CLOSURE}({[E' \Rightarrow \cdot E]}): \\
 E' &\Rightarrow \cdot E \\
 E &\Rightarrow \cdot E + T \\
 E &\Rightarrow \cdot E - T \\
