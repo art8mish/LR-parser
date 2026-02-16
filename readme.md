@@ -10,12 +10,14 @@
 Реализация представляет из себя конечный автомат LR(0), где L - парсинг слева направо, R - правое порождение, 0 - отсутствие предпросмотра символов. Для разрешения конфликтов используется SLR(1), использующий предпросмотр на 1 символ для принятия решений.
 
 ## Грамматика $G'$
-$$ 
-E' \Rightarrow E \\
-E \Rightarrow E + T \| E - T \| T \\
-T \Rightarrow T * F \| T / F \| F \\
-F \Rightarrow (E) \| \text{id} \\
-$$
+```math
+\begin{aligned}
+E' &\Rightarrow E \
+E &\Rightarrow E + T \| E - T \| T \\
+T &\Rightarrow T * F \| T / F \| F \\
+F &\Rightarrow (E) \| \text{id} 
+\end{aligned}
+```
 
 или
 
