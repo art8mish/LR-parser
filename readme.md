@@ -263,8 +263,8 @@ $$ F \Rightarrow (E) \cdot $$
 ```math
 \begin{flalign*} 
 \text{FOLLOW}(E) &= \{\$, ")", +, - \} \\
-\text{FOLLOW}(T) = \text{FOLLOW}(E) \bigcup \{*, /\} &= \{\$, ")", +, -, *, / \} \\
-\text{FOLLOW}(F) = \text{FOLLOW}(T) &= \{\$, ")", +, -, *, / \}
+\text{FOLLOW}(T) &= \text{FOLLOW}(E) \bigcup \{*, /\} = \{\$, ")", +, -, *, / \} \\
+\text{FOLLOW}(F) &= \text{FOLLOW}(T) = \{\$, ")", +, -, *, / \}
 \end{flalign*}
 ```
 
