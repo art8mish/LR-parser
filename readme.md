@@ -165,15 +165,15 @@ E &\Rightarrow E \cdot - T
 \end{flalign*}
 ```
 
-    Повторяющиеся переходы:
-```math
-\begin{flalign*} 
-& \text{GOTO}(I_4, T) = I_2 \\
-& \text{GOTO}(I_4, F) = I_3 \\
-& \text{GOTO}(I_4, "(") = I_4 \\
-& \text{GOTO}(I_4, \text{id}) = I_5
-\end{flalign*}
-```
+> Повторяющиеся переходы:
+> ```math
+> \begin{flalign*} 
+> & \text{GOTO}(I_4, T) = I_2 \\
+> & \text{GOTO}(I_4, F) = I_3 \\
+> & \text{GOTO}(I_4, "(") = I_4 \\
+> & \text{GOTO}(I_4, \text{id}) = I_5
+> \end{flalign*}
+> ```
 
 
 #### $I_{11} = \text{GOTO}(I_6, T)$:
