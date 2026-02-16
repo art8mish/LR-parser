@@ -165,7 +165,7 @@ E &\Rightarrow E \cdot - T
 \end{flalign*}
 ```
 
-Повторяющиеся переходы:
+    Повторяющиеся переходы:
 ```math
 \begin{flalign*} 
 & \text{GOTO}(I_4, T) = I_2 \\
@@ -186,7 +186,7 @@ T &\Rightarrow T \cdot / F
 \end{flalign*}
 ```
 
-Повторяющиеся переходы:
+    Повторяющиеся переходы:
 ```math
 \begin{flalign*} 
 & \text{GOTO}(I_6, F) = I_3 \\
@@ -205,7 +205,7 @@ T &\Rightarrow T \cdot / F
 \end{flalign*}
 ```
 
-Повторяющиеся переходы:
+    Повторяющиеся переходы:
 ```math
 \begin{flalign*} 
 & \text{GOTO}(I_7, F) = I_3 \\
@@ -218,7 +218,7 @@ T &\Rightarrow T \cdot / F
 
 $$ T \Rightarrow T * F \cdot $$
 
-Повторяющиеся переходы:
+    овторяющиеся переходы:
 ```math
 \begin{flalign*} 
 & \text{GOTO}(I_8, "(") = I_4 \\
@@ -230,7 +230,7 @@ $$ T \Rightarrow T * F \cdot $$
 
 $$ T \Rightarrow T / F \cdot $$
 
-Повторяющиеся переходы:
+    Повторяющиеся переходы:
 ```math
 \begin{flalign*}
 & \text{GOTO}(I_9, "(") = I_4 \\
@@ -242,7 +242,7 @@ $$ T \Rightarrow T / F \cdot $$
 
 $$ F \Rightarrow (E) \cdot $$
 
-Повторяющиеся переходы:
+    Повторяющиеся переходы:
 ```math
 \begin{flalign*} 
 & \text{GOTO}(I_{10}, +) = I_6 \\
@@ -255,11 +255,8 @@ $$ F \Rightarrow (E) \cdot $$
 ```math
 \begin{flalign*} 
 \text{FIRST}(F) &= \{"(", \text{id}\} \\
-\text{FIRST}(T) &= \text{FIRST}(F)  \\
+\text{FIRST}(T) &= \text{FIRST}(F) \\
 \text{FIRST}(E) &= \text{FIRST}(T) = \text{FIRST}(F)
-\end{flalign*}
-
-\begin{flalign*} 
 \text{FOLLOW}(E) &= \{\$, ")", +, - \} \\
 \text{FOLLOW}(T) &= \text{FOLLOW}(E) \bigcup \{*, /\} = \{\$, ")", +, -, *, / \} \\
 \text{FOLLOW}(F) &= \text{FOLLOW}(T) = \{\$, ")", +, -, *, / \}
