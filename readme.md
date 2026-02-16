@@ -66,7 +66,7 @@ F &\Rightarrow \cdot \text{id}
 
 ### Построение GOTO
 
-#### 1. $I_1 = \text{GOTO}(I_0, E)$
+#### $I_1 = \text{GOTO}(I_0, E)$:
 ```math
 \begin{flalign*}
 E' &\Rightarrow E \cdot \\
@@ -75,7 +75,7 @@ E &\Rightarrow E \cdot - T
 \end{flalign*}
 ```
 
-#### 2. $I_2 = \text{GOTO}(I_0, T)$
+#### $I_2 = \text{GOTO}(I_0, T)$:
 
 ```math
 \begin{flalign*}
@@ -85,17 +85,17 @@ T &\Rightarrow T \cdot / F
 \end{flalign*}
 ```
 
-#### 3. $I_3 = \text{GOTO}(I_0, F)$
+#### $I_3 = \text{GOTO}(I_0, F)$:
 
 $$ T \Rightarrow F \cdot $$
 
-#### 4. $I_4 = \text{GOTO}(I_0, "(")$
+#### $I_4 = \text{GOTO}(I_0, "(")$:
 
 $$ F \Rightarrow (\cdot E) $$
 
+$\text{CLOSURE}({[F \Rightarrow (\cdot E)]})$:
 ```math
 \begin{flalign*}
-\text{CLOSURE}({[F \Rightarrow (\cdot E)]}): \\
 E &\Rightarrow \cdot E + T \\
 E &\Rightarrow \cdot E - T \\
 E &\Rightarrow \cdot T \\
@@ -107,17 +107,17 @@ F &\Rightarrow \cdot \text{id}
 \end{flalign*}
 ```
 
-#### 5. $ I_5 = \text{GOTO}(I_0, \text{id}) $
+#### $I_5 = \text{GOTO}(I_0, \text{id})$:
 
 $$ F \Rightarrow \text{id} \cdot $$
 
-#### 6. $ I_6 = \text{GOTO}(I_1, +) $
+#### $I_6 = \text{GOTO}(I_1, +)$:
 
 $$ E \Rightarrow E + \cdot T $$
 
+$\text{CLOSURE}({[E \Rightarrow E + \cdot T]})$:
 ```math
 \begin{flalign*}
-\text{CLOSURE}({[E \Rightarrow E + \cdot T]}): \\
 T &\Rightarrow \cdot T * F \\
 T &\Rightarrow \cdot T / F \\
 T &\Rightarrow \cdot F \\
@@ -126,41 +126,38 @@ F &\Rightarrow \cdot \text{id}
 \end{flalign*}
 ```
 
-#### 7. $I_7 = \text{GOTO}(I_1, -)$
+#### $I_7 = \text{GOTO}(I_1, -)$:
 
 $$ E \Rightarrow E - \cdot T $$
 
-```math
-\begin{flalign*}
-\text{CLOSURE}({[E \Rightarrow E - \cdot T]}): Аналогично I_6
-\end{flalign*}
-```
+$\text{CLOSURE}({[E \Rightarrow E - \cdot T]})$: 
+Аналогично $I_6$
 
-#### 8. $I_8 = \text{GOTO}(I_2, *)$
+#### $I_8 = \text{GOTO}(I_2, *)$:
 
 $$ T \Rightarrow T * \cdot  F $$
 
+$\text{CLOSURE}({[T \Rightarrow T * \cdot  F]})$:
 ```math
 \begin{flalign*} 
-\text{CLOSURE}({[T \Rightarrow T * \cdot  F]}): \\
 F &\Rightarrow \cdot (E) \\
 F &\Rightarrow \cdot \text{id}
 \end{flalign*}
 ```
 
-#### 9. $I_9 = \text{GOTO}(I_2, /)$
+#### $I_9 = \text{GOTO}(I_2, /)$:
 
 $$ T \Rightarrow T / \cdot  F $$
 
+$\text{CLOSURE}({[T \Rightarrow T / \cdot  F]})$:
 ```math
-\begin{flalign*} 
-\text{CLOSURE}({[T \Rightarrow T / \cdot  F]}): \\
+\begin{flalign*}
 F &\Rightarrow \cdot (E) \\
 F &\Rightarrow \cdot \text{id}
 \end{flalign*}
 ```
 
-#### 10. $I_{10} = \text{GOTO}(I_4, E)$
+#### $I_{10} = \text{GOTO}(I_4, E)$:
 
 ```math
 \begin{flalign*} 
@@ -181,7 +178,7 @@ E &\Rightarrow E \cdot - T
 ```
 
 
-#### 11. $I_{11} = \text{GOTO}(I_6, T)$
+#### $I_{11} = \text{GOTO}(I_6, T)$:
 
 ```math
 \begin{flalign*} 
@@ -200,7 +197,7 @@ T &\Rightarrow T \cdot / F
 \end{flalign*}
 ```
 
-#### 12. $I_{12} = \text{GOTO}(I_7, T)$
+#### $I_{12} = \text{GOTO}(I_7, T)$:
 
 ```math
 \begin{flalign*} 
@@ -219,7 +216,7 @@ T &\Rightarrow T \cdot / F
 \end{flalign*}
 ```
 
-#### 13. $I_{13} = \text{GOTO}(I_8, F)$
+#### $I_{13} = \text{GOTO}(I_8, F)$:
 
 $$ T \Rightarrow T * F \cdot $$
 
@@ -231,7 +228,7 @@ $$ T \Rightarrow T * F \cdot $$
 \end{flalign*}
 ```
 
-#### 14. $I_{14} = \text{GOTO}(I_9, F)$
+#### $I_{14} = \text{GOTO}(I_9, F)$:
 
 $$ T \Rightarrow T / F \cdot $$
 
@@ -243,7 +240,7 @@ $$ T \Rightarrow T / F \cdot $$
 \end{flalign*}
 ```
 
-#### 15. $I_{15} = \text{GOTO}(I_{10}, ")")$
+#### $I_{15} = \text{GOTO}(I_{10}, ")")$:
 
 $$ F \Rightarrow (E) \cdot $$
 
