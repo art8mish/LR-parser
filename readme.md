@@ -254,15 +254,15 @@ $$ F \Rightarrow (E) \cdot $$
 
 ```math
 \begin{flalign*} 
-$\text{FIRST}(F) &= \{"(", \text{id}\} \\
-$\text{FIRST}(T) &= \text{FIRST}(F)  \\
-$\text{FIRST}(E) &= \text{FIRST}(T) = \text{FIRST}(F)
+\text{FIRST}(F) &= \{"(", \text{id}\} \\
+\text{FIRST}(T) &= \text{FIRST}(F)  \\
+\text{FIRST}(E) &= \text{FIRST}(T) = \text{FIRST}(F)
 \end{flalign*}
 
 \begin{flalign*} 
-$\text{FOLLOW}(E) &= \{\$, ")", +, - \} \\
-$\text{FOLLOW}(T) &= \text{FOLLOW}(E) \bigcup \{*, /\} = \{\$, ")", +, -, *, / \} \\
-$\text{FOLLOW}(F) &= \text{FOLLOW}(T) = \{\$, ")", +, -, *, / \}
+\text{FOLLOW}(E) &= \{\$, ")", +, - \} \\
+\text{FOLLOW}(T) &= \text{FOLLOW}(E) \bigcup \{*, /\} = \{\$, ")", +, -, *, / \} \\
+\text{FOLLOW}(F) &= \text{FOLLOW}(T) = \{\$, ")", +, -, *, / \}
 \end{flalign*}
 ```
 
