@@ -47,8 +47,8 @@ F &\Rightarrow \text{id}
 ### Начальное состояние
 
 
-$$ C = \text{CLOSURE}({[E' \Rightarrow \cdot E]}) $$
-$$\text{CLOSURE}({[E' \Rightarrow \cdot E]}):$$
+$$ C = \text{CLOSURE}(\{[E' \Rightarrow \cdot E]\}) $$
+$$\text{CLOSURE}(\{[E' \Rightarrow \cdot E]\}):$$
 ```math
 \begin{flalign*}
 E' &\Rightarrow \cdot E \\
@@ -92,7 +92,7 @@ $$ T \Rightarrow F \cdot $$
 
 $$ F \Rightarrow (\cdot E) $$
 
-$$\text{CLOSURE}({[F \Rightarrow (\cdot E)]}):$$
+$$\text{CLOSURE}(\{[F \Rightarrow (\cdot E)]\}):$$
 ```math
 \begin{flalign*}
 E &\Rightarrow \cdot E + T \\
@@ -113,7 +113,7 @@ $$ F \Rightarrow \text{id} \cdot $$
 #### $I_6 = \text{GOTO}(I_1, +)$:
 
 $$ E \Rightarrow E + \cdot T $$
-$$\text{CLOSURE}({[E \Rightarrow E + \cdot T]}):$$
+$$\text{CLOSURE}(\{[E \Rightarrow E + \cdot T]\}):$$
 ```math
 \begin{flalign*}
 T &\Rightarrow \cdot T * F \\
@@ -128,14 +128,14 @@ F &\Rightarrow \cdot \text{id}
 
 $$ E \Rightarrow E - \cdot T $$
 
-$$\text{CLOSURE}({[E \Rightarrow E - \cdot T]}): \text{Аналогично} I_6$$
+$$\text{CLOSURE}(\{[E \Rightarrow E - \cdot T]\}): \text{Аналогично} I_6$$
 
 
 #### $I_8 = \text{GOTO}(I_2, *)$:
 
 $$ T \Rightarrow T * \cdot  F $$
 
-$$\text{CLOSURE}({[T \Rightarrow T * \cdot  F]}):$$
+$$\text{CLOSURE}(\{[T \Rightarrow T * \cdot  F]\}):$$
 ```math
 \begin{flalign*} 
 F &\Rightarrow \cdot (E) \\
@@ -147,7 +147,7 @@ F &\Rightarrow \cdot \text{id}
 
 $$ T \Rightarrow T / \cdot  F $$
 
-$$\text{CLOSURE}({[T \Rightarrow T / \cdot  F]}):$$
+$$\text{CLOSURE}(\{[T \Rightarrow T / \cdot  F]\}):$$
 ```math
 \begin{flalign*}
 F &\Rightarrow \cdot (E) \\
