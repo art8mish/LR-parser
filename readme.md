@@ -168,10 +168,10 @@ E &\Rightarrow E \cdot - T
 > Повторяющиеся переходы:
 > ```math
 > \begin{flalign*} 
-> & \text{GOTO}(I_4, T) = I_2 \\
-> & \text{GOTO}(I_4, F) = I_3 \\
-> & \text{GOTO}(I_4, "(") = I_4 \\
-> & \text{GOTO}(I_4, \text{id}) = I_5
+> \text{GOTO}(I_4, T) &= I_2 \\
+> \text{GOTO}(I_4, F) &= I_3 \\
+> \text{GOTO}(I_4, "(") &= I_4 \\
+> \text{GOTO}(I_4, \text{id}) &= I_5
 > \end{flalign*}
 > ```
 
@@ -186,14 +186,14 @@ T &\Rightarrow T \cdot / F
 \end{flalign*}
 ```
 
-    Повторяющиеся переходы:
-```math
-\begin{flalign*} 
-& \text{GOTO}(I_6, F) = I_3 \\
-& \text{GOTO}(I_6, "(") = I_4 \\
-& \text{GOTO}(I_6, \text{id}) = I_5
-\end{flalign*}
-```
+> Повторяющиеся переходы:
+> ```math
+> \begin{flalign*} 
+> \text{GOTO}(I_6, F) &= I_3 \\
+> \text{GOTO}(I_6, "(") &= I_4 \\
+> \text{GOTO}(I_6, \text{id}) &= I_5
+> \end{flalign*}
+> ```
 
 #### $I_{12} = \text{GOTO}(I_7, T)$:
 
@@ -205,50 +205,50 @@ T &\Rightarrow T \cdot / F
 \end{flalign*}
 ```
 
-    Повторяющиеся переходы:
-```math
-\begin{flalign*} 
-& \text{GOTO}(I_7, F) = I_3 \\
-& \text{GOTO}(I_7, "(") = I_4 \\
-& \text{GOTO}(I_7, \text{id}) = I_5
-\end{flalign*}
-```
+> Повторяющиеся переходы:
+> ```math
+> \begin{flalign*} 
+> \text{GOTO}(I_7, F) &= I_3 \\
+> \text{GOTO}(I_7, "(") &= I_4 \\
+> \text{GOTO}(I_7, \text{id}) &= I_5
+> \end{flalign*}
+> ```
 
 #### $I_{13} = \text{GOTO}(I_8, F)$:
 
 $$ T \Rightarrow T * F \cdot $$
 
-    овторяющиеся переходы:
-```math
-\begin{flalign*} 
-& \text{GOTO}(I_8, "(") = I_4 \\
-& \text{GOTO}(I_8, \text{id}) = I_5
-\end{flalign*}
-```
+> Повторяющиеся переходы:
+> ```math
+> \begin{flalign*} 
+> \text{GOTO}(I_8, "(") &= I_4 \\
+> \text{GOTO}(I_8, \text{id}) &= I_5
+> \end{flalign*}
+> ```
 
 #### $I_{14} = \text{GOTO}(I_9, F)$:
 
 $$ T \Rightarrow T / F \cdot $$
 
-    Повторяющиеся переходы:
-```math
-\begin{flalign*}
-& \text{GOTO}(I_9, "(") = I_4 \\
-& \text{GOTO}(I_9, \text{id}) = I_5
-\end{flalign*}
-```
+> Повторяющиеся переходы:
+> ```math
+> \begin{flalign*}
+> \text{GOTO}(I_9, "(") &= I_4 \\
+> \text{GOTO}(I_9, \text{id}) &= I_5
+> \end{flalign*}
+> ```
 
 #### $I_{15} = \text{GOTO}(I_{10}, ")")$:
 
 $$ F \Rightarrow (E) \cdot $$
 
-    Повторяющиеся переходы:
-```math
-\begin{flalign*} 
-& \text{GOTO}(I_{10}, +) = I_6 \\
-& \text{GOTO}(I_{10}, -) = I_7
-\end{flalign*}
-```
+> Повторяющиеся переходы:
+> ```math
+> \begin{flalign*} 
+> \text{GOTO}(I_{10}, +) &= I_6 \\
+> \text{GOTO}(I_{10}, -) &= I_7
+> \end{flalign*}
+> ```
 
 ### Построение FIRST/FOLLOW
 
