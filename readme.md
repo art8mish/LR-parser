@@ -48,8 +48,7 @@ F &\Rightarrow \text{id}
 
 
 $$ C = \text{CLOSURE}({[E' \Rightarrow \cdot E]}) $$
-
-$\text{CLOSURE}({[E' \Rightarrow \cdot E]})$:
+$$\text{CLOSURE}({[E' \Rightarrow \cdot E]}):$$
 ```math
 \begin{flalign*}
 E' &\Rightarrow \cdot E \\
@@ -93,7 +92,7 @@ $$ T \Rightarrow F \cdot $$
 
 $$ F \Rightarrow (\cdot E) $$
 
-$\text{CLOSURE}({[F \Rightarrow (\cdot E)]})$:
+$$\text{CLOSURE}({[F \Rightarrow (\cdot E)]}):$$
 ```math
 \begin{flalign*}
 E &\Rightarrow \cdot E + T \\
