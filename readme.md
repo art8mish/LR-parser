@@ -115,7 +115,7 @@ $$ F \Rightarrow \text{id} \cdot $$
 
 $$ E \Rightarrow E + \cdot T $$
 
-$\text{CLOSURE}({[E \Rightarrow E + \cdot T]})$:
+    $\text{CLOSURE}({[E \Rightarrow E + \cdot T]})$:
 ```math
 \begin{flalign*}
 T &\Rightarrow \cdot T * F \\
