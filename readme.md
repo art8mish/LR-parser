@@ -46,9 +46,9 @@ F &\Rightarrow \text{id}
 
 ### Начальное состояние
 
+```math
 $$ C = \text{CLOSURE}({[E' \Rightarrow \cdot E]}) $$
 
-```math
 \begin{flalign*}
 \text{CLOSURE}({[E' \Rightarrow \cdot E]}): \\
 E' &\Rightarrow \cdot E \\
