@@ -79,6 +79,10 @@ struct Action {
     GrammarRuleType get_grammar_rule() const {
         return std::get<GrammarRuleType>(value);
     }
+
+    bool operator==(const Action &rhs) const {
+        return value == rhs.value;
+    }
 };
 
 class Parser {
@@ -91,6 +95,8 @@ class Parser {
     // std::stack<std::string> symbol_stack;
     std::unordered_map<State, std::unordered_map<Token, Action>> action_table{};
     std::unordered_map<State, std::unordered_map<NonTerminal, State>> goto_table{};
+
+    std::vector<Action> action_log{};
 
 public:
     Parser() {
@@ -218,6 +224,7 @@ private:
         }
         ast.reset();
         tokens.clear();
+        action_log.clear();
     }
 
     void cut_input(std::string &input, const char *cut_text, size_t len) {
@@ -271,6 +278,7 @@ public:
                 break;
             }
             const Action &action = action_row[token];
+            action_log.push_back(action);
 
             if (action.is_shift()) {
                 State dst_state = action.get_state();
@@ -322,6 +330,10 @@ public:
             }
         }
         yy_delete_buffer(buffer);
+    }
+
+    const std::vector<Action> &get_action_log() const {
+        return action_log;
     }
 
     bool is_accepted() const {
