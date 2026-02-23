@@ -38,6 +38,55 @@ cmake --build build
 ./build/lr-parser < end2end/tests/test1.txt 
 ```
 
-Результат построения AST-дерева можно найти в `output`:
+Пример вывода для выражения `a * d - (a + (b - a)) / y`:
+```shell
+Parsing expression: a * d - (a + (b - a)) / y
+------------------------------------------------------------------------------------------------------------
+| State | Stack                          | Input                          | Action                         |
+------------------------------------------------------------------------------------------------------------
+| I0    |                                | a * d - (a + (b - a)) / y$     | Shift -> I5                    | 
+| I5    | id                             | * d - (a + (b - a)) / y$       | Reduce 8: F -> id              | 
+| I3    | F                              | * d - (a + (b - a)) / y$       | Reduce 6: T -> F               | 
+| I2    | T                              | * d - (a + (b - a)) / y$       | Shift -> I8                    | 
+| I8    | T *                            | d - (a + (b - a)) / y$         | Shift -> I5                    | 
+| I5    | T * id                         | - (a + (b - a)) / y$           | Reduce 8: F -> id              | 
+| I13   | T * F                          | - (a + (b - a)) / y$           | Reduce 4: T -> T * F           | 
+| I2    | T                              | - (a + (b - a)) / y$           | Reduce 3: E -> T               | 
+| I1    | E                              | - (a + (b - a)) / y$           | Shift -> I7                    | 
+| I7    | E -                            | (a + (b - a)) / y$             | Shift -> I4                    | 
+| I4    | E - (                          | a + (b - a)) / y$              | Shift -> I5                    | 
+| I5    | E - ( id                       | + (b - a)) / y$                | Reduce 8: F -> id              | 
+| I3    | E - ( F                        | + (b - a)) / y$                | Reduce 6: T -> F               | 
+| I2    | E - ( T                        | + (b - a)) / y$                | Reduce 3: E -> T               | 
+| I10   | E - ( E                        | + (b - a)) / y$                | Shift -> I6                    | 
+| I6    | E - ( E +                      | (b - a)) / y$                  | Shift -> I4                    | 
+| I4    | E - ( E + (                    | b - a)) / y$                   | Shift -> I5                    | 
+| I5    | E - ( E + ( id                 | - a)) / y$                     | Reduce 8: F -> id              | 
+| I3    | E - ( E + ( F                  | - a)) / y$                     | Reduce 6: T -> F               | 
+| I2    | E - ( E + ( T                  | - a)) / y$                     | Reduce 3: E -> T               | 
+| I10   | E - ( E + ( E                  | - a)) / y$                     | Shift -> I7                    | 
+| I7    | E - ( E + ( E -                | a)) / y$                       | Shift -> I5                    | 
+| I5    | E - ( E + ( E - id             | )) / y$                        | Reduce 8: F -> id              | 
+| I3    | E - ( E + ( E - F              | )) / y$                        | Reduce 6: T -> F               | 
+| I12   | E - ( E + ( E - T              | )) / y$                        | Reduce 2: E -> E - T           | 
+| I10   | E - ( E + ( E                  | )) / y$                        | Shift -> I15                   | 
+| I15   | E - ( E + ( E )                | ) / y$                         | Reduce 7: F -> (E)             | 
+| I3    | E - ( E + F                    | ) / y$                         | Reduce 6: T -> F               | 
+| I11   | E - ( E + T                    | ) / y$                         | Reduce 1: E -> E + T           | 
+| I10   | E - ( E                        | ) / y$                         | Shift -> I15                   | 
+| I15   | E - ( E )                      | / y$                           | Reduce 7: F -> (E)             | 
+| I3    | E - F                          | / y$                           | Reduce 6: T -> F               | 
+| I12   | E - T                          | / y$                           | Shift -> I9                    | 
+| I9    | E - T /                        | y$                             | Shift -> I5                    | 
+| I5    | E - T / id                     | $                              | Reduce 8: F -> id              | 
+| I14   | E - T / F                      | $                              | Reduce 5: T -> T / F           | 
+| I12   | E - T                          | $                              | Reduce 2: E -> E - T           | 
+| I1    | E                              | $                              | Accept                         | 
+------------------------------------------------------------------------------------------------------------
+```
+
+Результат построения AST-дерева можно найти в папке `output` после запуска. 
+
+Пример AST-дерева на основе прошлого выражения:
 
 ![AST](pics/ast.png)
