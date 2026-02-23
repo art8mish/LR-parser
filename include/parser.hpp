@@ -93,6 +93,9 @@ class Parser {
     std::unordered_map<State, std::unordered_map<NonTerminal, State>> goto_table{};
 
 public:
+
+
+
     Parser() {
         init_action_table();
         init_goto_table();
@@ -232,7 +235,6 @@ private:
     }
 
     
-
     void ast_reduction(GrammarRuleType rule) {
         if (rule == GrammarRuleType::F_EXPR || rule == GrammarRuleType::E_T ||
             rule == GrammarRuleType::T_F || rule == GrammarRuleType::F_ID)
@@ -251,16 +253,6 @@ private:
     }
 
 public:
-
-    void draw_ast(const std::string output_file = "output/ast") {
-        if (!ast) {
-            std::cerr << "Error: AST is not builded" << std::endl;
-            return;
-        }
-        draw_ast_tree(ast, output_file);
-        std::cout << "AST saved to " << output_file << std::endl;
-    }
-
     void parse(const std::string &input) {
         YY_BUFFER_STATE buffer = yy_scan_string(input.c_str());
 
@@ -289,11 +281,7 @@ public:
                 print_state(remaining_input,
                             "Shift -> I" + std::to_string(static_cast<unsigned>(dst_state)));
                 if (token == Token::ID)
-                    node_stack.push();
-
-                print_end();
-                std::cout << "Success: Expression is valid\n";
-                break;de_stack.push(std::make_unique<IdNode>(yytext));
+                    node_stack.push(std::make_unique<IdNode>(yytext));
                 state_stack.push(dst_state);
                 tokens.push_back(token);
 
@@ -338,6 +326,19 @@ public:
             }
         }
         yy_delete_buffer(buffer);
+    }
+
+    bool is_accepted() const {
+        return ast != nullptr;
+    }
+
+    void draw_ast(const std::string output_file = "output/ast.png") {
+        if (!ast) {
+            std::cerr << "Error: AST is not builded" << std::endl;
+            return;
+        }
+        draw_ast_tree(ast.get(), output_file);
+        std::cout << "AST saved: " << output_file << std::endl;
     }
 };
 

@@ -24,7 +24,7 @@ int main() {
         auto duration = std::clock() - start_time;
         std::cout << "Runtime: " << duration << " us" << std::endl;
 #endif
-        parser.draw_ast(expression);
+        parser.draw_ast();
         return 0;
     } catch (const std::exception &e) {
         std::cout << "Error: " << e.what() << std::endl;

@@ -31,7 +31,7 @@ public:
         std::string node_id = "node_" + id();
         Agnode_t* node = agnode(g, const_cast<char*>(node_id.c_str()), 1);
         
-        std::string label = "ID: " + name;
+        std::string label = "id (" + name + ")";
         agsafeset(node, const_cast<char*>("label"), const_cast<char*>(label.c_str()), const_cast<char*>(""));
         agsafeset(node, const_cast<char*>("shape"), const_cast<char*>("ellipse"), const_cast<char*>(""));
         return node;
@@ -82,7 +82,7 @@ public:
     }
 };
 
-void draw_ast_tree(std::unique_ptr<Node> root, const std::string& output_file) {
+void draw_ast_tree(const Node *root, const std::string& output_file) {
     if (!root) 
         return;
 

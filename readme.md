@@ -20,8 +20,24 @@ F &\Rightarrow (E) | \text{id}
 ```
 [Подробное построение LR-парсера](docs/lr-parser.md)
 
-## Зависимости
+## Запуск
 
+Зависимости:
 ```shell
-sudo apt-get install cmake graphviz graphviz-dev
+sudo apt-get install -y build-essential cmake flex libfl-dev graphviz graphviz-dev libgtest-dev
 ```
+
+Сборка:
+```shell
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+```
+
+Запуск:
+```shell
+./build/lr-parser < end2end/tests/test1.txt 
+```
+
+Результат построения AST-дерева можно найти в `output`:
+
+![AST](pics/ast.png)

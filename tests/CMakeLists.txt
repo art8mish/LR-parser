@@ -4,10 +4,10 @@ include(GoogleTest)
 
 function(add_proj_test target) 
     add_executable(${target} ${ARGN})
-    target_include_directories(${target} PRIVATE ${INCLUDE_DIR})
+    target_include_directories(${target} PRIVATE ${INCLUDE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${GRAPHVIZ_INCLUDE_DIRS})
     target_compile_features(${target} PRIVATE cxx_std_20)
-    target_link_libraries(${target} PRIVATE GTest::gtest_main)
+    target_link_libraries(${target} PRIVATE GTest::gtest_main fl ${GRAPHVIZ_LIBRARIES})
     gtest_discover_tests(${target})
 endfunction()
 
-add_proj_test(tests ${TESTS_DIR} / tests.cpp)
+add_proj_test(tests ${TESTS_DIR} / tests.cpp ${FLEX_${LEXER_TARGET}_OUTPUTS})
