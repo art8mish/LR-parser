@@ -18,5 +18,10 @@ T &\Rightarrow T * F | T / F | F \\
 F &\Rightarrow (E) | \text{id} 
 \end{flalign*}
 ```
+[Подробное построение LR-парсера](docs/lr-parser.md)
 
-[Подробное построение LR-парсера](lr-parser.md)
+## Зависимости
+
+```shell
+sudo apt-get install cmake graphviz graphviz-dev
+```
