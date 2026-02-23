@@ -9,7 +9,7 @@ pkg_check_modules(GRAPHVIZ REQUIRED libgvc libcgraph)
 include_directories(${GRAPHVIZ_INCLUDE_DIRS})
 
 set(PARSER_TARGET lr-parser)
-set(LEXER_TARGET Lexer)
+set(LEXER_TARGET lexer)
 
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
@@ -20,6 +20,8 @@ set(LEXER_CPP ${CMAKE_CURRENT_BINARY_DIR}/lexer.cpp)
 
 flex_target(${LEXER_TARGET} ${LEXER_L} ${LEXER_CPP})
 set_source_files_properties(${LEXER_CPP} PROPERTIES COMPILE_FLAGS "-w")
+set_source_files_properties(${LEXER_CPP} PROPERTIES GENERATED TRUE)
+set(GENERATED_LEXER_FILE "${LEXER_CPP}" CACHE INTERNAL "")
 
 function(add_exec target)
     add_executable(${target} ${ARGN})
@@ -45,6 +47,7 @@ function(add_warnings target)
 endfunction()
 
 add_exec(${PARSER_TARGET} ${SRC_DIR}/main.cpp ${FLEX_${LEXER_TARGET}_OUTPUTS})
+
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_warnings(${PARSER_TARGET})

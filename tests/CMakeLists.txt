@@ -2,6 +2,8 @@ enable_testing()
 find_package(GTest REQUIRED) 
 include(GoogleTest)
 
+set_source_files_properties("${GENERATED_LEXER_FILE}" PROPERTIES GENERATED TRUE)
+
 function(add_proj_test target) 
     add_executable(${target} ${ARGN})
     target_include_directories(${target} PRIVATE ${INCLUDE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${GRAPHVIZ_INCLUDE_DIRS})
@@ -10,4 +12,4 @@ function(add_proj_test target)
     gtest_discover_tests(${target})
 endfunction()
 
-add_proj_test(tests ${TESTS_DIR}/tests.cpp ${FLEX_${LEXER_TARGET}_OUTPUTS})
+add_proj_test(tests ${TESTS_DIR}/tests.cpp ${GENERATED_LEXER_FILE})
