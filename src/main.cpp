@@ -1,13 +1,10 @@
 
-#include <iostream>
-
 #include "parser.hpp"
-
-
+#include <iostream>
 
 int main() {
     try {
-        lr_parser::Parser parser {};
+        lr_parser::Parser parser{};
 
         std::string expression;
         std::getline(std::cin, expression);

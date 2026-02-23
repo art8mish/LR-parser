@@ -93,9 +93,6 @@ class Parser {
     std::unordered_map<State, std::unordered_map<NonTerminal, State>> goto_table{};
 
 public:
-
-
-
     Parser() {
         init_action_table();
         init_goto_table();
@@ -234,7 +231,6 @@ private:
             input.clear();
     }
 
-    
     void ast_reduction(GrammarRuleType rule) {
         if (rule == GrammarRuleType::F_EXPR || rule == GrammarRuleType::E_T ||
             rule == GrammarRuleType::T_F || rule == GrammarRuleType::F_ID)
