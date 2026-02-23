@@ -10,4 +10,4 @@ function(add_proj_test target)
     gtest_discover_tests(${target})
 endfunction()
 
-add_proj_test(tests ${TESTS_DIR} / tests.cpp ${FLEX_${LEXER_TARGET}_OUTPUTS})
+add_proj_test(tests ${TESTS_DIR}/tests.cpp ${FLEX_${LEXER_TARGET}_OUTPUTS})

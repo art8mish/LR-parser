@@ -21,11 +21,6 @@ set(LEXER_CPP ${CMAKE_CURRENT_BINARY_DIR}/lexer.cpp)
 flex_target(${LEXER_TARGET} ${LEXER_L} ${LEXER_CPP})
 set_source_files_properties(${LEXER_CPP} PROPERTIES COMPILE_FLAGS "-w")
 
-option(BUILD_TESTS "Build unit tests" ON)
-if(BUILD_TESTS)
-    add_subdirectory(${TESTS_DIR})
-endif()
-
 function(add_exec target)
     add_executable(${target} ${ARGN})
     target_include_directories(${target} PRIVATE ${INCLUDE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${GRAPHVIZ_INCLUDE_DIRS})
@@ -53,4 +48,9 @@ add_exec(${PARSER_TARGET} ${SRC_DIR}/main.cpp ${FLEX_${LEXER_TARGET}_OUTPUTS})
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_warnings(${PARSER_TARGET})
+endif()
+
+option(BUILD_TESTS "Build unit tests" ON)
+if(BUILD_TESTS)
+    add_subdirectory(${TESTS_DIR})
 endif()
